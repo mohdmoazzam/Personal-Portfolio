@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.use("/api/v1/portfolio", portfolioRoutes);
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+app.get("/", function(req, res) {
+    res.send(`<h5>Server is up and running</h5>`);
 });
 
 const PORT = process.env.PORT || 8080;
