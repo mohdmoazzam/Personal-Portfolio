@@ -3,6 +3,7 @@ import "./Contact.css";
 import { BsLinkedin, BsGithub, BsFacebook } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -17,7 +18,8 @@ const Contact = () => {
       if (!name || !email || !msg) {
         toast.error("PLease Provide all fields");
       }
-      const res = await axios.post("/api/v1/portfolio/sendEmail", { name, email, msg });
+      const url = BASE_URL + "/api/v1/portfolio/sendEmail";
+      const res = await axios.post(url, { name, email, msg });
       if (res.data.success) {
         console.log("here")
         toast.success(res.data.message);
