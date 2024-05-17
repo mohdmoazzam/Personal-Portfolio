@@ -1,0 +1,43 @@
+.sidebar-section {
+    display: flex;
+    background-color: black;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #1e1e2c;
+    width: 60px;
+    transition: width 0.3s ease;
+    position: fixed;
+}
+
+.sidebar-toggle {
+    width: 180px;
+    /* height: fit-content; */
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+.sidebar-toggle-icons {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    cursor: pointer;
+}
+
+.sidebar-toggle-icons p svg {
+    background-color: #f29f67;
+    color: white;
+    margin-top: 30px;
+}
+
+.sidebar-toggle::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}

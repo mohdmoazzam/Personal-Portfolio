@@ -1,0 +1,51 @@
+.navbar-profile-pic {
+    transition: width 0.5s ease;
+}
+.navbar-profile-pic img {
+    border-radius: 90px;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 2px;
+}
+
+.nav-item {
+    color: white;
+    margin-top: 30px;
+}
+
+.nav-link {
+    margin-left: 3px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+}
+
+.nav-link svg{
+    margin: auto;
+}
+
+.nav-link:hover{
+    color: #f29f67;
+}
+
+.nav-link .active {
+    color: #f29f67;
+    border-left:5px solid #f29f67;
+    padding-left: 4px;
+    margin-left: 0px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    gap: 1px;
+}
+
+.judge0 {
+    display: flex;
+    text-decoration: none;
+    gap: 5px;
+    color: white;
+}
