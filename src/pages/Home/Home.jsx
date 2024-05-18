@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from "../../context/ThemeContext";
 import "./home.css";
 import Typewriter from "typewriter-effect";
-import Resume from "../../assets/docs/resume.txt";
+import Resume from "../../assets/docs/Mohd_Moazzam_CV.pdf";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { Fade } from "react-awesome-reveal";
 
@@ -39,7 +39,7 @@ const Home = () => {
                             <a className='btn btn-hire' href='https://api.whatsapp.com/send?phone=123456789' rel='noreferrer' target='_blank'>
                                 Hire Me
                             </a>
-                            <a className='btn btn-cv' href={Resume} download="Mozzam.pdf">Download CV</a>
+                            <a className='btn btn-cv' href={Resume} download="Mozzam_resume.pdf">Download CV</a>
                         </div>
                     </Fade>
                 </div>

@@ -17,6 +17,7 @@ const Contact = () => {
       setLoading(true);
       if (!name || !email || !msg) {
         toast.error("PLease Provide all fields");
+        setLoading(false);
       }
       const url = BASE_URL + "/api/v1/portfolio/sendEmail";
       const res = await axios.post(url, { name, email, msg });
@@ -56,7 +57,7 @@ const Contact = () => {
             </div>
             <div className="col-lg-6 col-md-6">
               <div className="card2 d-flex card border-0 px-4 py-5">
-                <div className="row">
+                <div className="row mobilesize">
                   <div className="row">
                     <h6>
                       Contact With
