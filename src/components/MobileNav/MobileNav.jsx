@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import { FcAbout, FcBiotech, FcBusinessContact, FcHome, FcReadingEbook } from "react-icons/fc";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineMenuFold } from "react-icons/ai";
-import { GoProjectSymlink } from "react-icons/go";
-import { SiWorkplace } from "react-icons/si";
-import "./MobileNav.css";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from 'react-scroll';
+import "./MobileNav.css";
 
 const MobileNav = () => {
     const [open, setOpen] = useState(false);
@@ -36,43 +33,36 @@ const MobileNav = () => {
                                 <div className="nav-item">
                                     <div className="nav-link">
                                         <Link to='home' spy={true} smooth={true} offset={-100} duration={100} onClick={handleMenuClick}>
-                                            <FcHome size={20} />
                                             Home
                                         </Link>
                                     </div>
                                     <div className="nav-link">
                                         <Link to='about' spy={true} smooth={true} offset={-100} duration={100} onClick={handleMenuClick}>
-                                            <FcAbout size={20} />
                                             About
                                         </Link>
                                     </div>
                                     <div className="nav-link">
                                         <Link to='education' spy={true} smooth={true} offset={-100} duration={100} onClick={handleMenuClick}>
-                                            <FcReadingEbook size={20} />
                                             Education
                                         </Link>
                                     </div>
                                     <div className="nav-link">
                                         <Link to='tech-stack' spy={true} smooth={true} offset={-100} duration={100} onClick={handleMenuClick}>
-                                            <FcBiotech size={20} />
                                             Tech Stack
                                         </Link>
                                     </div>
                                     <div className="nav-link">
                                         <Link to='project' spy={true} smooth={true} offset={-100} duration={100} onClick={handleMenuClick}>
-                                            <GoProjectSymlink size={20} />
                                             Projects
                                         </Link>
                                     </div>
                                     <div className="nav-link">
                                         <Link to='experience' spy={true} smooth={true} offset={-100} duration={100} onClick={handleMenuClick}>
-                                            <SiWorkplace size={20} />
                                             Experience
                                         </Link>
                                     </div>
                                     <div className="nav-link">
                                         <Link to='contact' spy={true} smooth={true} offset={-100} duration={100} onClick={handleMenuClick}>
-                                            <FcBusinessContact size={20} />
                                             Contact
                                         </Link>
                                     </div>

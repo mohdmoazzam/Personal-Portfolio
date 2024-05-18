@@ -29,12 +29,18 @@
 
 .mobile-nav-menu .nav-items {
     height: auto;
-    width: 200px;
     background-color: #1e1e1e;
     padding: 5px;
     padding-bottom: 20px;
     border-bottom-right-radius: 10px;
-    border-top-right-radius:10px
+    border-bottom-left-radius:10px
+}
+
+
+.mobile-nav-menu .nav-items .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media(min-width: 600px) {
