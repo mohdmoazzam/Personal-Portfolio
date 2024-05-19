@@ -1,10 +1,9 @@
 import React from 'react';
-import { useTheme } from "../../context/ThemeContext";
-import "./home.css";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import Typewriter from "typewriter-effect";
 import Resume from "../../assets/docs/Mohd_Moazzam_CV.pdf";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { Fade } from "react-awesome-reveal";
+import { useTheme } from "../../context/ThemeContext";
+import "./home.css";
 
 const Home = () => {
     const [theme, setTheme] = useTheme();
@@ -22,7 +21,6 @@ const Home = () => {
                     }
                 </div>
                 <div className="container home-content">
-                    <Fade direction='right'>
                         <h2>Hi 👋 I'm a</h2>
                         <h1>
                             <Typewriter
@@ -33,15 +31,13 @@ const Home = () => {
                                 }}
                             />
                         </h1>
-                    </Fade>
-                    <Fade direction='up'>
                         <div className="home-buttons">
                             <a className='btn btn-hire' href='https://api.whatsapp.com/send?phone=123456789' rel='noreferrer' target='_blank'>
                                 Hire Me
                             </a>
                             <a className='btn btn-cv' href={Resume} download="Mozzam_resume.pdf">Download CV</a>
                         </div>
-                    </Fade>
+             
                 </div>
             </div>
         </>

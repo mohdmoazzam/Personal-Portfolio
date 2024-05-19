@@ -33,9 +33,9 @@
     padding: 5px;
     padding-bottom: 20px;
     border-bottom-right-radius: 10px;
-    border-bottom-left-radius:10px
+    border-bottom-left-radius:10px;
+    opacity: 0.95;
 }
-
 
 .mobile-nav-menu .nav-items .nav-item {
     display: flex;
