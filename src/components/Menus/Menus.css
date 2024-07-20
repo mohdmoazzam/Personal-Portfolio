@@ -14,6 +14,10 @@
 .nav-item {
     color: white;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-link {
@@ -32,20 +36,16 @@
 }
 
 .nav-link .active {
-    color: #f29f67;
-    border-left:2px solid #f29f67;
-    padding-left: 4px;
-    margin-left: 0px;
+    color: #e3f3d5;
+    border-left: 3px solid #aae4d7;
     text-decoration: none;
     display: flex;
-    justify-content: center;
-    width: fit-content;
-    gap: 1px;
+    justify-content: flex-start; /* Align to the start */
+    padding-left: 10px; 
 }
 
 .judge0 {
-    display: flex;
     text-decoration: none;
-    gap: 5px;
     color: white;
+    cursor: pointer;
 }

@@ -12,7 +12,7 @@
 }
 
 .sidebar-toggle {
-    width: 180px;
+    width: 160px;
     /* height: fit-content; */
     overflow-y: auto;
     transition: width 0.3s ease;
