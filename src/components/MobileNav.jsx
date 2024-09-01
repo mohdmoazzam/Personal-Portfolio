@@ -21,7 +21,7 @@ const MobileNav = () => {
 
   return (
     <>
-      <div className="fixed top-0 w-full z-10">
+      <div className="fixed top-0 w-full z-10 overflow-hidden">
         <div className="h-14 w-full bg-gray-900 p-2 flex items-center">
           {open ? (
             <AiOutlineMenuFold

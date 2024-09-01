@@ -38,7 +38,7 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="pt-12 pb-16 mx-auto max-w-6xl" id="contact">
+    <div className="pt-12 pb-16 mx-auto w-full" id="contact">
       <div className="shadow-md rounded-lg border border-gray-200">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 flex items-center">
