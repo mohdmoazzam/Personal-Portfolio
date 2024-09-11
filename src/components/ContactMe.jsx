@@ -38,32 +38,35 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="pt-12 pb-16 mx-auto w-full" id="contact">
+    <div className="pt-6 pb-10 px-4 mx-auto w-full" id="contact">
       <div className="shadow-md rounded-lg border border-gray-200">
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 flex items-center">
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex items-center">
             <img
               src="https://img.freepik.com/free-photo/hot-line-contact-us-call-center-search-interface_53876-124009.jpg?w=2000"
               alt="Contact"
-              className="w-full h-full object-cover rounded-l-lg"
+              className="w-full h-64 md:h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
             />
           </div>
-          <div className="md:w-1/2 p-6">
+          {/* Form Section */}
+          <div className="w-full md:w-1/2 p-4 md:p-6">
             <div className="flex items-center justify-center mb-4">
-              <h6 className="flex items-center text-lg font-semibold text-gray-800">
+              <h6 className="flex items-center text-base md:text-lg font-semibold text-gray-800">
                 Contact With
-                <BsLinkedin color="blue" size={30} className="ml-2" />
-                <BsGithub color="black" size={30} className="ml-2" />
-                <BsFacebook color="blue" size={30} className="ml-2" />
+                <BsLinkedin color="blue" size={24} className="ml-2" />
+                <BsGithub color="black" size={24} className="ml-2" />
+                <BsFacebook color="blue" size={24} className="ml-2" />
               </h6>
             </div>
+            {/* Divider */}
             <div className="flex items-center justify-center my-4">
-              <div className="border-t border-gray-300 w-1/2"></div>
-              <span className="px-3 font-semibold text-gray-600">OR</span>
-              <div className="border-t border-gray-300 w-1/2"></div>
+              <div className="border-t border-gray-300 w-1/3"></div>
+              <span className="px-2 font-semibold text-gray-600">OR</span>
+              <div className="border-t border-gray-300 w-1/3"></div>
             </div>
             <form onSubmit={handleSubmit}>
-              <div className="mb-4">
+              <div className="mb-3">
                 <input
                   type="text"
                   name="name"
@@ -73,7 +76,7 @@ const ContactMe = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <input
                   type="email"
                   name="email"
@@ -83,7 +86,7 @@ const ContactMe = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <textarea
                   name="msg"
                   placeholder="Write your message"

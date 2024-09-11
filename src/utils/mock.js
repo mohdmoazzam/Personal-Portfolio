@@ -75,7 +75,7 @@ export const projectData = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ221LJ-Di7lMTdlFfLd1XxbqxVY9qO59FJwCCu2wtwEQ&s",
     tags: ["Node", "Socket", "React", "Mongodb"],
-    link: "https://google.com",
+    link: "#",
   },
   {
     id: 3,
@@ -84,6 +84,6 @@ export const projectData = [
     image:
       "https://media.licdn.com/dms/image/D560BAQEIF_UR1SqzOA/company-logo_200_200/0/1703313495850/subtrix_logo?e=2147483647&v=beta&t=D99KllOlo_-yoCSFTzxSgRPIe8QsDCdT0sC7nuCvE3Q",
     tags: ["Node", "Express", "Postgres"],
-    link: "https://google.com",
+    link: "#",
   },
 ];
