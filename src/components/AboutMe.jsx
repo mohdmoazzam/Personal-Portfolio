@@ -4,7 +4,6 @@ import { useTheme } from "../context/ThemeContext";
 
 const AboutMe = () => {
   const { theme } = useTheme();
-  console.log("T", theme);
 
   return (
     <Bounce>

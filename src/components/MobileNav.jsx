@@ -9,7 +9,6 @@ import { GITHUB_PROFILE_URI } from "../utils/contants";
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  console.log(theme);
 
   const handleOpen = () => {
     setOpen(!open);
