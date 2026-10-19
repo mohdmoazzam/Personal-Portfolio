@@ -21,6 +21,20 @@ import awsLogo from "../assets/tech/amazonwebservices-original-wordmark.svg";
 import dockerLogo from "../assets/tech/docker-original.svg";
 import gitLogo from "../assets/tech/git-original.svg";
 import openaiLogo from "../assets/tech/openai.svg";
+import grokLogo from "../assets/tech/grok.svg";
+
+export const techLogos: Record<string, string> = {
+  "Node.js": nodejsLogo,
+  NestJS: nestjsLogo,
+  "React.js": reactLogo,
+  TypeScript: typescriptLogo,
+  PostgreSQL: postgresqlLogo,
+  Elasticsearch: elasticsearchLogo,
+  Redis: redisLogo,
+  WebSocket: socketioLogo,
+  "OpenAI API": openaiLogo,
+  "Grok API": grokLogo,
+};
 
 export interface TimelineProject {
   name: string;

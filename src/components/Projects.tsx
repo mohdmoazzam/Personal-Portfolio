@@ -2,7 +2,7 @@ import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { FiArrowUpRight, FiCheckCircle, FiCpu, FiEye } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
-import { Project as ProjectType, projectData } from "../utils/mock";
+import { Project as ProjectType, projectData, techLogos } from "../utils/mock";
 
 const domainOf = (url: string) => url.replace(/^https?:\/\//, "");
 
@@ -166,8 +166,17 @@ const Project = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 dark:border-white/10 dark:text-zinc-300"
+                          className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white py-1 pl-1 pr-3 text-xs font-medium text-zinc-700 transition-colors hover:border-teal-500/40 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300"
                         >
+                          {techLogos[tag] && (
+                            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white p-1 ring-1 ring-zinc-200 dark:ring-white/10">
+                              <img
+                                src={techLogos[tag]}
+                                alt=""
+                                className="h-full w-full object-contain"
+                              />
+                            </span>
+                          )}
                           {tag}
                         </span>
                       ))}

@@ -52,7 +52,10 @@ const ContactMe = () => {
         toast.error(res.data.message);
       }
     } catch (error) {
-      toast.error("Something went wrong, please try again later.");
+      const serverMessage = axios.isAxiosError<SendEmailResponse>(error)
+        ? error.response?.data?.message
+        : undefined;
+      toast.error(serverMessage ?? "Something went wrong, please try again later.");
     } finally {
       setLoading(false);
     }
