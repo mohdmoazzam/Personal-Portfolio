@@ -216,7 +216,7 @@ const ContactMe = () => {
 
         <Fade direction="up" triggerOnce>
           <div className="grid gap-6 lg:grid-cols-5">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-600 via-cyan-700 to-zinc-900 p-8 text-white shadow-xl lg:col-span-2">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-violet-700 to-zinc-900 p-8 text-white shadow-xl lg:col-span-2">
               <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-orange-300/30 blur-3xl" />
               <h3 className="relative font-display text-2xl font-bold">Get in touch</h3>
               <p className="relative mt-3 text-sm leading-relaxed text-white/80">

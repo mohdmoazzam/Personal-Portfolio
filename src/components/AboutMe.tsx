@@ -12,7 +12,7 @@ const AboutMe = () => {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Fade direction="left" triggerOnce>
             <div className="relative mx-auto max-w-md">
-              <div className="absolute -inset-3 rotate-3 rounded-3xl bg-gradient-to-tr from-teal-400/40 to-orange-300/40 blur-sm" />
+              <div className="absolute -inset-3 rotate-3 rounded-3xl bg-gradient-to-tr from-indigo-400/40 to-orange-300/40 blur-sm" />
               <img
                 src={profileImage}
                 alt="Mohd Moazzam"

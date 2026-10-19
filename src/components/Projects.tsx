@@ -7,7 +7,7 @@ import { Project as ProjectType, projectData, techLogos } from "../utils/mock";
 const domainOf = (url: string) => url.replace(/^https?:\/\//, "");
 
 const IntuvosPreview = () => (
-  <div className="flex h-full items-center justify-center bg-gradient-to-br from-teal-50 via-white to-orange-50 p-6 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 sm:p-10">
+  <div className="flex h-full items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-orange-50 p-6 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 sm:p-10">
     <div className="w-full max-w-sm rounded-2xl border border-zinc-200 bg-white p-5 shadow-xl dark:border-white/10 dark:bg-zinc-950">
       <div className="flex items-center justify-between">
         <div>
@@ -20,7 +20,7 @@ const IntuvosPreview = () => (
         </div>
         <div
           className="relative flex h-16 w-16 items-center justify-center rounded-full"
-          style={{ background: "conic-gradient(#14b8a6 0% 86%, rgb(113 113 122 / 0.2) 86% 100%)" }}
+          style={{ background: "conic-gradient(#6366f1 0% 86%, rgb(113 113 122 / 0.2) 86% 100%)" }}
         >
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white font-display text-sm font-bold text-zinc-900 dark:bg-zinc-950 dark:text-white">
             86%
@@ -38,7 +38,7 @@ const IntuvosPreview = () => (
             className="flex items-center justify-between rounded-lg bg-zinc-50 px-3 py-2 dark:bg-white/[0.04]"
           >
             <span className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300">
-              <row.icon className="text-teal-500" /> {row.label}
+              <row.icon className="text-indigo-500" /> {row.label}
             </span>
             <span className="font-semibold text-zinc-900 dark:text-white">{row.value}</span>
           </li>
@@ -51,7 +51,7 @@ const IntuvosPreview = () => (
 
 const BrowserFrame = ({ project }: { project: ProjectType }) => (
   <div className="relative">
-    <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-teal-400/25 via-cyan-400/10 to-orange-300/25 blur-2xl transition-opacity duration-500 group-hover:opacity-100 lg:opacity-60" />
+    <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-indigo-400/25 via-violet-400/10 to-orange-300/25 blur-2xl transition-opacity duration-500 group-hover:opacity-100 lg:opacity-60" />
     <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 dark:border-white/10 dark:bg-zinc-900">
       <div className="flex items-center gap-3 border-b border-zinc-200 bg-zinc-50 px-4 py-2.5 dark:border-white/10 dark:bg-zinc-900">
         <div className="flex gap-1.5">
@@ -143,7 +143,7 @@ const Project = () => {
                     <h3 className="mt-5 font-display text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
                       {project.title}
                     </h3>
-                    <p className="mt-1 font-medium text-teal-600 dark:text-teal-300">
+                    <p className="mt-1 font-medium text-indigo-600 dark:text-indigo-300">
                       {project.tagline}
                     </p>
                     <p className="mt-4 leading-relaxed">{project.description}</p>
@@ -166,7 +166,7 @@ const Project = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white py-1 pl-1 pr-3 text-xs font-medium text-zinc-700 transition-colors hover:border-teal-500/40 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300"
+                          className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white py-1 pl-1 pr-3 text-xs font-medium text-zinc-700 transition-colors hover:border-indigo-500/40 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300"
                         >
                           {techLogos[tag] && (
                             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white p-1 ring-1 ring-zinc-200 dark:ring-white/10">

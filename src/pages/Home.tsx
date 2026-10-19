@@ -28,7 +28,7 @@ const Home = () => {
       <ScrollToTop
         smooth
         component={<FiArrowUp className="mx-auto text-xl text-white" />}
-        className="!flex items-center justify-center !rounded-full !bg-gradient-to-r from-teal-500 to-cyan-500 !shadow-lg shadow-teal-500/30 transition-transform hover:-translate-y-1"
+        className="!flex items-center justify-center !rounded-full !bg-gradient-to-r from-indigo-500 to-violet-500 !shadow-lg shadow-indigo-500/30 transition-transform hover:-translate-y-1"
         style={{ width: 48, height: 48, right: 24, bottom: 24 }}
       />
     </>

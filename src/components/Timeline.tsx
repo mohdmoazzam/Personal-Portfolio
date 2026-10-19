@@ -5,14 +5,14 @@ import { TimelineItem } from "../utils/mock";
 
 const Timeline = ({ items }: { items: TimelineItem[] }) => {
   return (
-    <ol className="relative mx-auto max-w-4xl space-y-8 before:absolute before:bottom-0 before:left-5 before:top-2 before:w-px before:bg-gradient-to-b before:from-teal-500 before:via-zinc-300 before:to-transparent dark:before:via-white/10">
+    <ol className="relative mx-auto max-w-4xl space-y-8 before:absolute before:bottom-0 before:left-5 before:top-2 before:w-px before:bg-gradient-to-b before:from-indigo-500 before:via-zinc-300 before:to-transparent dark:before:via-white/10">
       {items.map((item) => (
         <li key={item.id} className="relative pl-14 sm:pl-16">
-          <span className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full border border-teal-500/30 bg-white text-lg text-teal-600 shadow-sm dark:bg-zinc-900 dark:text-teal-300">
+          <span className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full border border-indigo-500/30 bg-white text-lg text-indigo-600 shadow-sm dark:bg-zinc-900 dark:text-indigo-300">
             <item.icon />
           </span>
           <Fade direction="up" triggerOnce>
-            <div className="card p-6 transition-colors duration-300 hover:border-teal-500/40">
+            <div className="card p-6 transition-colors duration-300 hover:border-indigo-500/40">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h3 className="font-display text-lg font-semibold text-zinc-900 dark:text-white">
                   {item.title}
@@ -21,7 +21,7 @@ const Timeline = ({ items }: { items: TimelineItem[] }) => {
                   {item.period}
                 </span>
               </div>
-              <p className="mt-1 text-sm font-medium text-teal-600 dark:text-teal-300">
+              <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-300">
                 {item.org}
               </p>
               {item.location && (
@@ -49,7 +49,7 @@ const Timeline = ({ items }: { items: TimelineItem[] }) => {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-0.5 text-xs font-semibold text-teal-600 hover:underline dark:text-teal-300"
+                            className="inline-flex items-center gap-0.5 text-xs font-semibold text-indigo-600 hover:underline dark:text-indigo-300"
                           >
                             {project.url.replace(/^https?:\/\//, "")}
                             <FiArrowUpRight />

@@ -43,7 +43,7 @@ const Navbar = () => {
                 smooth
                 offset={-64}
                 duration={500}
-                activeClass="!text-teal-600 dark:!text-teal-300 bg-teal-500/10"
+                activeClass="!text-indigo-600 dark:!text-indigo-300 bg-indigo-500/10"
                 className="cursor-pointer rounded-full px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
               >
                 {link.label}
@@ -94,7 +94,7 @@ const Navbar = () => {
                 smooth
                 offset={-64}
                 duration={500}
-                activeClass="!text-teal-600 dark:!text-teal-300 bg-teal-500/10"
+                activeClass="!text-indigo-600 dark:!text-indigo-300 bg-indigo-500/10"
                 className="block cursor-pointer rounded-xl px-4 py-3 text-base font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-white/5"
                 onClick={() => setOpen(false)}
               >

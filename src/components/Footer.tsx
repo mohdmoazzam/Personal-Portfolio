@@ -29,7 +29,7 @@ const Footer = () => {
                 smooth
                 offset={-64}
                 duration={500}
-                className="cursor-pointer text-zinc-500 transition-colors hover:text-teal-600 dark:text-zinc-400 dark:hover:text-teal-300"
+                className="cursor-pointer text-zinc-500 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-300"
               >
                 {link.label}
               </Link>

@@ -15,8 +15,8 @@ const Education = () => {
         />
 
         <div className="relative mx-auto max-w-5xl">
-          <div className="absolute bottom-0 left-6 top-0 w-px bg-gradient-to-b from-teal-500/0 via-teal-500/50 to-orange-400/0 md:left-1/2">
-            <span className="absolute left-1/2 h-24 w-[3px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-cyan-300 to-transparent motion-safe:animate-beam" />
+          <div className="absolute bottom-0 left-6 top-0 w-px bg-gradient-to-b from-indigo-500/0 via-indigo-500/50 to-orange-400/0 md:left-1/2">
+            <span className="absolute left-1/2 h-24 w-[3px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-violet-300 to-transparent motion-safe:animate-beam" />
           </div>
 
           <ol className="space-y-14 md:space-y-24">
@@ -28,7 +28,7 @@ const Education = () => {
                   className="group relative grid grid-cols-[3rem_1fr] items-center gap-x-4 md:grid-cols-[1fr_5rem_1fr] md:gap-x-0"
                 >
                   <div className="relative z-10 col-start-1 row-span-2 row-start-1 flex justify-center self-start md:col-start-2 md:row-span-1 md:self-center">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-xl text-white shadow-lg shadow-teal-500/40 ring-8 ring-white transition-transform duration-500 group-hover:scale-110 dark:ring-zinc-950">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 text-xl text-white shadow-lg shadow-indigo-500/40 ring-8 ring-white transition-transform duration-500 group-hover:scale-110 dark:ring-zinc-950">
                       <edu.icon />
                     </span>
                   </div>
@@ -68,14 +68,14 @@ const Education = () => {
                       reverse ? "md:col-start-3 md:pl-10" : "md:col-start-1 md:pr-10"
                     }`}
                   >
-                    <article className="card relative overflow-hidden p-7 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-teal-500/40 group-hover:shadow-xl group-hover:shadow-teal-500/10">
-                      <span className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-teal-400/10 blur-2xl transition-colors duration-500 group-hover:bg-teal-400/25" />
+                    <article className="card relative overflow-hidden p-7 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-indigo-500/40 group-hover:shadow-xl group-hover:shadow-indigo-500/10">
+                      <span className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-indigo-400/10 blur-2xl transition-colors duration-500 group-hover:bg-indigo-400/25" />
                       <span className="badge relative">{edu.level}</span>
                       <h3 className="relative mt-4 font-display text-2xl font-bold leading-snug text-zinc-900 dark:text-white">
                         {edu.degree}
                       </h3>
                       <div className="relative mt-5 flex items-center gap-3 rounded-xl bg-zinc-100/70 p-3 dark:bg-white/[0.04]">
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-lg text-teal-600 shadow-sm dark:bg-zinc-900 dark:text-teal-300">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-lg text-indigo-600 shadow-sm dark:bg-zinc-900 dark:text-indigo-300">
                           <FiBookOpen />
                         </span>
                         <div className="min-w-0">

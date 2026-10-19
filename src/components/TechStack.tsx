@@ -18,7 +18,7 @@ const Techstack = () => {
             {Techstacks.map((ts) => (
               <div
                 key={ts._id}
-                className="card group flex h-full flex-col items-center gap-3 p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10"
+                className="card group flex h-full flex-col items-center gap-3 p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-500/10"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white p-2.5 shadow-sm ring-1 ring-zinc-200 transition-transform duration-300 group-hover:scale-110 dark:ring-white/10">
                   <img

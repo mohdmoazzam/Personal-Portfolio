@@ -126,7 +126,7 @@ const OtpModal = ({
           <FiX />
         </button>
 
-        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-500 text-xl text-white shadow-lg shadow-teal-500/25">
+        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-xl text-white shadow-lg shadow-indigo-500/25">
           <FiShield />
         </span>
         <h3 id="otp-title" className="mt-4 font-display text-xl font-bold text-zinc-900 dark:text-white">
@@ -182,7 +182,7 @@ const OtpModal = ({
             type="button"
             onClick={onResend}
             disabled={busy || resendIn > 0}
-            className="font-medium text-teal-600 hover:underline disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline dark:text-teal-300 dark:disabled:text-zinc-500"
+            className="font-medium text-indigo-600 hover:underline disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline dark:text-indigo-300 dark:disabled:text-zinc-500"
           >
             {resendIn > 0 ? `Resend code in ${resendIn}s` : "Resend code"}
           </button>

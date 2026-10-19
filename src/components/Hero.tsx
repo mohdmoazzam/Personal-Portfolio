@@ -8,7 +8,7 @@ import { WHATSAPP_URI } from "../utils/contants";
 
 const CodeCard = () => (
   <div className="relative mx-auto w-full max-w-md">
-    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-teal-400 via-cyan-400 to-orange-300 bg-[length:200%_200%] opacity-60 blur-xl motion-safe:animate-gradient" />
+    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-indigo-400 via-violet-400 to-orange-300 bg-[length:200%_200%] opacity-60 blur-xl motion-safe:animate-gradient" />
     <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/95 shadow-2xl">
       <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red-400" />
@@ -19,7 +19,7 @@ const CodeCard = () => (
       <pre className="overflow-x-auto p-5 text-left font-mono text-[13px] leading-relaxed text-zinc-300 sm:text-sm">
         <code>
           <span className="text-purple-400">const</span>{" "}
-          <span className="text-cyan-300">developer</span> = {"{"}
+          <span className="text-violet-300">developer</span> = {"{"}
           {"\n  "}name: <span className="text-orange-300">"Mohd Moazzam"</span>,
           {"\n  "}role: <span className="text-orange-300">"Full Stack Developer"</span>,
           {"\n  "}company: <span className="text-orange-300">"AppSierra"</span>,
@@ -29,7 +29,7 @@ const CodeCard = () => (
           {"\n          "}<span className="text-orange-300">"PostgreSQL"</span>,{" "}
           <span className="text-orange-300">"Redis"</span>],
           {"\n  "}experience: <span className="text-orange-300">"4+ years"</span>,
-          {"\n  "}available: <span className="text-teal-300">true</span>,
+          {"\n  "}available: <span className="text-indigo-300">true</span>,
           {"\n"}
           {"}"};
         </code>
@@ -45,7 +45,7 @@ const Hero = () => {
       className="relative flex min-h-screen items-center overflow-hidden pb-16 pt-28"
     >
       <div className="bg-grid pointer-events-none absolute inset-0" />
-      <div className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-teal-400/30 blur-3xl motion-safe:animate-blob dark:bg-teal-500/20" />
+      <div className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-indigo-400/30 blur-3xl motion-safe:animate-blob dark:bg-indigo-500/20" />
       <div className="pointer-events-none absolute -right-24 top-48 h-80 w-80 rounded-full bg-orange-300/30 blur-3xl [animation-delay:4s] motion-safe:animate-blob dark:bg-orange-500/10" />
 
       <div className="container-page relative grid items-center gap-16 lg:grid-cols-[1.15fr_1fr]">
@@ -115,7 +115,7 @@ const Hero = () => {
         offset={-64}
         duration={500}
         aria-label="Scroll to about"
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 cursor-pointer text-2xl text-zinc-400 transition-colors hover:text-teal-500 sm:block"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 cursor-pointer text-2xl text-zinc-400 transition-colors hover:text-indigo-500 sm:block"
       >
         <FiChevronDown className="motion-safe:animate-bounce" />
       </Link>
