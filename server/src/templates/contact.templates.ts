@@ -52,6 +52,18 @@ const messageBlock = (message: string) =>
     message
   )}</div>`;
 
+/** One-time code that proves the sender owns their email address. */
+export const verificationCodeEmail = (code: string, validForMinutes: number): RenderedEmail => ({
+  subject: `${code} is your verification code`,
+  html: layout(
+    "Verify your email",
+    `<p style="margin:0 0 16px;font-size:15px;line-height:1.6;">Use this code to verify your email and send your message to ${OWNER_NAME}:</p>
+     <p style="margin:0 0 20px;padding:16px;text-align:center;font-size:32px;font-weight:bold;letter-spacing:10px;color:#0f766e;background:#f0fdfa;border-radius:12px;">${code}</p>
+     <p style="margin:0;font-size:13px;color:#71717a;">This code expires in ${validForMinutes} minutes. If you didn't request it, you can safely ignore this email.</p>`
+  ),
+  text: `Your verification code is ${code}\n\nIt expires in ${validForMinutes} minutes. If you didn't request it, you can safely ignore this email.\n`,
+});
+
 /** Notification delivered to the portfolio owner. */
 export const ownerNotificationEmail = ({ name, email, msg }: ContactInput): RenderedEmail => {
   const safeName = escapeHtml(name);

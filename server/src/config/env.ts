@@ -22,6 +22,10 @@ const envSchema = z.object({
   MAIL_PASS: z.string().min(1),
   MAIL_FROM_NAME: z.string().min(1).default("Mohd Moazzam"),
   OWNER_EMAIL: z.string().email(),
+
+  VERIFICATION_SECRET: z
+    .string()
+    .min(32, "VERIFICATION_SECRET must be at least 32 characters"),
 });
 
 const parsed = envSchema.safeParse(process.env);

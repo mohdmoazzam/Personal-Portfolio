@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { env } from "../config/env.js";
+import { isVerifiedFor } from "../services/emailVerification.service.js";
 import { sendMail } from "../services/mail.service.js";
 import {
   ownerNotificationEmail,
@@ -9,6 +10,14 @@ import type { ContactInput } from "../validators/contact.schema.js";
 
 export const sendEmail = async (req: Request<unknown, unknown, ContactInput>, res: Response) => {
   const contact = req.body;
+
+  if (!isVerifiedFor(contact.verificationToken, contact.email)) {
+    res.status(403).json({
+      success: false,
+      message: "Please verify your email before sending a message.",
+    });
+    return;
+  }
 
   // The owner notification is the essential delivery: if it fails, the request fails.
   try {
