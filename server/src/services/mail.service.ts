@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 import { env } from "../config/env.js";
 
+const CONNECTION_TIMEOUT_MS = 10_000;
+
 const transporter = nodemailer.createTransport({
   host: env.MAIL_HOST,
   port: env.MAIL_PORT,
@@ -10,6 +12,10 @@ const transporter = nodemailer.createTransport({
     pass: env.MAIL_PASS,
   },
   pool: true,
+  // Fail fast instead of nodemailer's 2 minute default when SMTP is unreachable.
+  connectionTimeout: CONNECTION_TIMEOUT_MS,
+  greetingTimeout: CONNECTION_TIMEOUT_MS,
+  socketTimeout: 20_000,
 });
 
 export interface MailOptions {
@@ -20,11 +26,12 @@ export interface MailOptions {
   replyTo?: string;
 }
 
-export const sendMail = (options: MailOptions) =>
-  transporter.sendMail({
+export const sendMail = async (options: MailOptions) => {
+  await transporter.sendMail({
     from: { name: env.MAIL_FROM_NAME, address: env.MAIL_USER },
     ...options,
   });
+};
 
 export const verifyMailer = () => transporter.verify();
 

@@ -35,12 +35,10 @@ export const sendEmail = async (req: Request<unknown, unknown, ContactInput>, re
     return;
   }
 
-  // The confirmation is best effort: a bad sender address shouldn't fail the request.
-  try {
-    await sendMail({ to: contact.email, ...senderConfirmationEmail(contact) });
-  } catch (error) {
-    console.warn(`Failed to send confirmation email to ${contact.email}:`, error);
-  }
+  // The confirmation is best effort, so it's sent in the background without delaying the response.
+  sendMail({ to: contact.email, ...senderConfirmationEmail(contact) }).catch((error) =>
+    console.warn(`Failed to send confirmation email to ${contact.email}:`, error)
+  );
 
   res.status(200).json({
     success: true,

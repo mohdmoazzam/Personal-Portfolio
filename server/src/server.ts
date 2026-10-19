@@ -13,9 +13,11 @@ const server = app.listen(env.PORT, (error?: Error) => {
 });
 
 verifyMailer()
-  .then(() => console.log("SMTP connection verified"))
+  .then(() => console.log(`SMTP connection to ${env.MAIL_HOST}:${env.MAIL_PORT} verified`))
   .catch((error: Error) =>
-    console.warn(`SMTP verification failed, emails may not send: ${error.message}`)
+    console.warn(
+      `SMTP verification failed for ${env.MAIL_HOST}:${env.MAIL_PORT}, emails may not send: ${error.message}`
+    )
   );
 
 const shutdown = (signal: string) => {

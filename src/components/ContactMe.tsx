@@ -20,7 +20,8 @@ import {
   WHATSAPP_URI,
 } from "../utils/contants";
 
-const API_URL = `${process.env.REACT_APP_BASE_URL}/api/v1/portfolio`;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+const API_URL = `${BASE_URL}/api/v1/portfolio`;
 const RESEND_COOLDOWN_SECONDS = 60;
 
 interface ApiResponse {
@@ -77,6 +78,11 @@ const ContactMe = () => {
     verified !== null &&
     verified.email === normalizeEmail(email) &&
     verified.expiresAt > Date.now();
+
+  // Wake the backend on page load: free hosts sleep when idle and take a while to start.
+  useEffect(() => {
+    axios.get(`${BASE_URL}/health`).catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (resendIn <= 0) return;
