@@ -29,7 +29,6 @@ const CodeCard = () => (
           {"\n          "}<span className="text-orange-300">"PostgreSQL"</span>,{" "}
           <span className="text-orange-300">"Redis"</span>],
           {"\n  "}experience: <span className="text-orange-300">"4+ years"</span>,
-          {"\n  "}activeUsers: <span className="text-teal-300">100_000</span>,
           {"\n  "}available: <span className="text-teal-300">true</span>,
           {"\n"}
           {"}"};
