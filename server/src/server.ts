@@ -1,6 +1,5 @@
 import { createApp } from "./app.js";
 import { env } from "./config/env.js";
-import { closeMailer, verifyMailer } from "./services/mail.service.js";
 
 const app = createApp();
 
@@ -12,20 +11,11 @@ const server = app.listen(env.PORT, (error?: Error) => {
   console.log(`Server running on port ${env.PORT} (${env.NODE_ENV})`);
 });
 
-verifyMailer()
-  .then(() => console.log(`SMTP connection to ${env.MAIL_HOST}:${env.MAIL_PORT} verified`))
-  .catch((error: Error) =>
-    console.warn(
-      `SMTP verification failed for ${env.MAIL_HOST}:${env.MAIL_PORT}, emails may not send: ${error.message}`
-    )
-  );
+console.log(`Sending email via EmailJS service "${env.EMAILJS_SERVICE_ID}"`);
 
 const shutdown = (signal: string) => {
   console.log(`${signal} received, shutting down...`);
-  server.close(() => {
-    closeMailer();
-    process.exit(0);
-  });
+  server.close(() => process.exit(0));
   setTimeout(() => process.exit(1), 10_000).unref();
 };
 
