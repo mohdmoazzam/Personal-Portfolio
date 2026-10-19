@@ -2,15 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 overflow-x-hidden bg-white font-sans text-zinc-700 antialiased transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-300;
+  }
+
+  ::selection {
+    @apply bg-teal-400/30 text-zinc-900 dark:text-white;
+  }
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .section {
+    @apply relative py-20 sm:py-28;
+  }
+
+  .card {
+    @apply rounded-2xl border border-zinc-200/80 bg-white/70 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/[0.03];
+  }
+
+  .gradient-text {
+    background-image: linear-gradient(to right, #0d9488, #0891b2, #f97316);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .dark .gradient-text {
+    background-image: linear-gradient(to right, #5eead4, #67e8f9, #fdba74);
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-teal-700 dark:text-teal-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-500/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60 dark:focus-visible:ring-offset-zinc-950;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white/60 px-6 py-3 text-sm font-semibold text-zinc-800 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-500/50 hover:text-teal-700 dark:border-white/15 dark:bg-white/5 dark:text-zinc-100 dark:hover:text-teal-300;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-lg text-zinc-600 transition-colors duration-200 hover:border-teal-500/40 hover:text-teal-600 dark:border-white/10 dark:text-zinc-300 dark:hover:text-teal-300;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder-zinc-400 transition focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/15 dark:border-white/10 dark:bg-zinc-900/60 dark:text-white dark:placeholder-zinc-500;
+  }
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(13 148 136 / 0.55);
+}
+
+.dark .text-outline {
+  -webkit-text-stroke-color: rgb(94 234 212 / 0.45);
+}
+
+.group:hover .text-outline {
+  color: rgb(20 184 166 / 0.12);
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, rgb(113 113 122 / 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(113 113 122 / 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
 }
