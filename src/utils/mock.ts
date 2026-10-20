@@ -3,6 +3,7 @@ import { GiDiploma } from "react-icons/gi";
 import { IconType } from "react-icons";
 import pitchnhireImage from "../assets/images/projects/pitchnhire.webp";
 import palifyImage from "../assets/images/projects/palify.webp";
+import studynotionImage from "../assets/images/projects/studynotion.webp";
 import nodejsLogo from "../assets/tech/nodejs-original.svg";
 import nestjsLogo from "../assets/tech/nestjs-original.svg";
 import expressLogo from "../assets/tech/express-original.svg";
@@ -34,6 +35,8 @@ export const techLogos: Record<string, string> = {
   WebSocket: socketioLogo,
   "OpenAI API": openaiLogo,
   "Grok API": grokLogo,
+  "Express.js": expressLogo,
+  MongoDB: mongodbLogo,
 };
 
 export interface TimelineProject {
@@ -227,5 +230,20 @@ export const projectData: Project[] = [
     ],
     tags: ["NestJS", "React.js", "OpenAI API", "Grok API"],
     link: "https://intuvos.com",
+  },
+  {
+    id: 4,
+    title: "StudyNotion",
+    tagline: "E-learning Platform",
+    description:
+      "Students buy video courses, learn at their own pace and track progress; instructors create, publish and sell their own courses.",
+    category: "Full stack",
+    metrics: [
+      { value: "2 roles", label: "Student & instructor dashboards" },
+      { value: "Razorpay", label: "Course checkout & payments" },
+    ],
+    tags: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB", "Razorpay"],
+    link: "https://study-notion-mdmo.vercel.app",
+    image: studynotionImage,
   },
 ];
