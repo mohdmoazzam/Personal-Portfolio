@@ -11,7 +11,7 @@ const server = app.listen(env.PORT, (error?: Error) => {
   console.log(`Server running on port ${env.PORT} (${env.NODE_ENV})`);
 });
 
-console.log(`Sending email via EmailJS service "${env.EMAILJS_SERVICE_ID}"`);
+console.log(`Sending email via Brevo as ${env.MAIL_FROM_EMAIL ?? env.OWNER_EMAIL}`);
 
 const shutdown = (signal: string) => {
   console.log(`${signal} received, shutting down...`);

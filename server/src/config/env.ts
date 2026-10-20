@@ -15,12 +15,11 @@ const envSchema = z.object({
     ),
   TRUST_PROXY: z.coerce.number().int().min(0).default(0),
 
-  // EmailJS (dashboard.emailjs.com): Email Services, Email Templates and Account > API keys.
-  EMAILJS_SERVICE_ID: z.string().min(1),
-  EMAILJS_TEMPLATE_ID: z.string().min(1),
-  EMAILJS_PUBLIC_KEY: z.string().min(1),
-  EMAILJS_PRIVATE_KEY: z.string().min(1),
+  // Brevo (app.brevo.com): SMTP & API > API keys. The sender must be verified under Senders.
+  BREVO_API_KEY: z.string().min(1),
   MAIL_FROM_NAME: z.string().min(1).default("Mohd Moazzam"),
+  // Defaults to OWNER_EMAIL when unset.
+  MAIL_FROM_EMAIL: z.preprocess((value) => value || undefined, z.string().email().optional()),
   OWNER_EMAIL: z.string().email(),
 
   VERIFICATION_SECRET: z
