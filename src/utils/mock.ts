@@ -23,6 +23,7 @@ import dockerLogo from "../assets/tech/docker-original.svg";
 import gitLogo from "../assets/tech/git-original.svg";
 import openaiLogo from "../assets/tech/openai.svg";
 import grokLogo from "../assets/tech/grok.svg";
+import claudeLogo from "../assets/tech/claude.svg";
 
 export const techLogos: Record<string, string> = {
   "Node.js": nodejsLogo,
@@ -172,6 +173,7 @@ export const Techstacks: Techstack[] = [
   { _id: 16, name: "Docker", category: "DevOps", logo: dockerLogo },
   { _id: 17, name: "Git", category: "DevOps", logo: gitLogo },
   { _id: 18, name: "OpenAI / Grok API", category: "AI", logo: openaiLogo },
+  { _id: 19, name: "Claude", category: "AI", logo: claudeLogo },
 ];
 
 export const projectData: Project[] = [
