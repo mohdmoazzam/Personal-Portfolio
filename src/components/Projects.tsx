@@ -49,49 +49,88 @@ const IntuvosPreview = () => (
   </div>
 );
 
-const BrowserFrame = ({ project }: { project: ProjectType }) => (
-  <div className="relative">
-    <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-indigo-400/25 via-violet-400/10 to-orange-300/25 blur-2xl transition-opacity duration-500 group-hover:opacity-100 lg:opacity-60" />
-    <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 dark:border-white/10 dark:bg-zinc-900">
-      <div className="flex items-center gap-3 border-b border-zinc-200 bg-zinc-50 px-4 py-2.5 dark:border-white/10 dark:bg-zinc-900">
-        <div className="flex gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
-          <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-          <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+const BuzzChatPreview = () => (
+  <div className="flex h-full items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-orange-50 p-6 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 sm:p-10">
+    <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xl dark:border-white/10 dark:bg-zinc-950">
+      <div className="flex items-center gap-3 border-b border-zinc-200 px-4 py-3 dark:border-white/10">
+        <div className="relative">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-500 font-display text-sm font-bold text-white">
+            DT
+          </span>
+          <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-green-400 ring-2 ring-white dark:ring-zinc-950" />
         </div>
-        <span className="mx-auto truncate rounded-md bg-white px-3 py-1 text-[11px] text-zinc-500 ring-1 ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:ring-white/10">
-          {domainOf(project.link)}
-        </span>
-        <span className="w-[42px]" />
+        <div>
+          <p className="font-display text-sm font-bold text-zinc-900 dark:text-white">Dev Team</p>
+          <p className="text-[11px] text-zinc-400">4 members · 3 online</p>
+        </div>
       </div>
-      <div
-        className={`overflow-hidden ${
-          project.image ? "aspect-[16/10]" : "sm:aspect-[16/10]"
-        }`}
-      >
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            loading="lazy"
-            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-          />
-        ) : (
-          <IntuvosPreview />
-        )}
+      <div className="space-y-2.5 px-4 py-4 text-sm">
+        <p className="w-fit max-w-[80%] rounded-2xl rounded-tl-sm bg-zinc-100 px-3 py-2 text-zinc-700 dark:bg-white/[0.06] dark:text-zinc-200">
+          Pushed the new socket events 🚀
+        </p>
+        <p className="ml-auto w-fit max-w-[80%] rounded-2xl rounded-tr-sm bg-indigo-500 px-3 py-2 text-white">
+          Nice, presence works now!
+        </p>
+        <p className="w-fit max-w-[80%] rounded-2xl rounded-tl-sm bg-zinc-100 px-3 py-2 text-zinc-700 dark:bg-white/[0.06] dark:text-zinc-200">
+          Sharing the design file 📎
+        </p>
+        <p className="text-[11px] italic text-zinc-400">Aisha is typing…</p>
       </div>
-    </div>
-
-    <div className="absolute -bottom-6 left-6 hidden items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-xl dark:border-white/10 dark:bg-zinc-900 sm:flex">
-      <span className="gradient-text font-display text-2xl font-bold">
-        {project.metrics[0].value}
-      </span>
-      <span className="text-xs font-medium leading-tight text-zinc-600 dark:text-zinc-300">
-        {project.metrics[0].label}
-      </span>
     </div>
   </div>
 );
+
+const previews: Record<string, () => JSX.Element> = {
+  Intuvos: IntuvosPreview,
+  BuzzChat: BuzzChatPreview,
+};
+
+const BrowserFrame = ({ project }: { project: ProjectType }) => {
+  const Preview = previews[project.title];
+  return (
+    <div className="relative">
+      <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-indigo-400/25 via-violet-400/10 to-orange-300/25 blur-2xl transition-opacity duration-500 group-hover:opacity-100 lg:opacity-60" />
+      <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 dark:border-white/10 dark:bg-zinc-900">
+        <div className="flex items-center gap-3 border-b border-zinc-200 bg-zinc-50 px-4 py-2.5 dark:border-white/10 dark:bg-zinc-900">
+          <div className="flex gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+            <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+            <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+          </div>
+          <span className="mx-auto truncate rounded-md bg-white px-3 py-1 text-[11px] text-zinc-500 ring-1 ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:ring-white/10">
+            {domainOf(project.link)}
+          </span>
+          <span className="w-[42px]" />
+        </div>
+        <div
+          className={`overflow-hidden ${
+            project.image ? "aspect-[16/10]" : "sm:aspect-[16/10]"
+          }`}
+        >
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              loading="lazy"
+              className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          ) : (
+            Preview && <Preview />
+          )}
+        </div>
+      </div>
+
+      <div className="absolute -bottom-6 left-6 hidden items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-xl dark:border-white/10 dark:bg-zinc-900 sm:flex">
+        <span className="gradient-text font-display text-2xl font-bold">
+          {project.metrics[0].value}
+        </span>
+        <span className="text-xs font-medium leading-tight text-zinc-600 dark:text-zinc-300">
+          {project.metrics[0].label}
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const Project = () => {
   return (
