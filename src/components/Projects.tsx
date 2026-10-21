@@ -85,56 +85,33 @@ const previews: Record<string, () => JSX.Element> = {
   BuzzChat: BuzzChatPreview,
 };
 
-const BrowserFrame = ({ project }: { project: ProjectType }) => {
+const Thumbnail = ({ project }: { project: ProjectType }) => {
   const Preview = previews[project.title];
   return (
-    <div className="relative">
-      <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-indigo-400/25 via-violet-400/10 to-orange-300/25 blur-2xl transition-opacity duration-500 group-hover:opacity-100 lg:opacity-60" />
-      <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 dark:border-white/10 dark:bg-zinc-900">
-        <div className="flex items-center gap-3 border-b border-zinc-200 bg-zinc-50 px-4 py-2.5 dark:border-white/10 dark:bg-zinc-900">
-          <div className="flex gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
-            <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-            <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+    <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white dark:border-white/10 dark:bg-zinc-900">
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          loading="lazy"
+          className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+        />
+      ) : (
+        Preview && (
+          <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="absolute left-0 top-0 h-[166.667%] w-[166.667%] origin-top-left scale-[0.6]">
+              <Preview />
+            </div>
           </div>
-          <span className="mx-auto truncate rounded-md bg-white px-3 py-1 text-[11px] text-zinc-500 ring-1 ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:ring-white/10">
-            {domainOf(project.link)}
-          </span>
-          <span className="w-[42px]" />
-        </div>
-        <div
-          className={`overflow-hidden ${
-            project.image ? "aspect-[16/10]" : "sm:aspect-[16/10]"
-          }`}
-        >
-          {project.image ? (
-            <img
-              src={project.image}
-              alt={`${project.title} screenshot`}
-              loading="lazy"
-              className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-          ) : (
-            Preview && <Preview />
-          )}
-        </div>
-      </div>
-
-      <div className="absolute -bottom-6 left-6 hidden items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-xl dark:border-white/10 dark:bg-zinc-900 sm:flex">
-        <span className="gradient-text font-display text-2xl font-bold">
-          {project.metrics[0].value}
-        </span>
-        <span className="text-xs font-medium leading-tight text-zinc-600 dark:text-zinc-300">
-          {project.metrics[0].label}
-        </span>
-      </div>
+        )
+      )}
     </div>
   );
 };
 
 const Project = () => {
   return (
-    <section id="project" className="section overflow-hidden bg-zinc-50 dark:bg-white/[0.02]">
+    <section id="project" className="section bg-zinc-50 dark:bg-white/[0.02]">
       <div className="container-page">
         <SectionHeading
           eyebrow="Projects"
@@ -142,99 +119,80 @@ const Project = () => {
           subtitle="Production platforms I've designed and shipped — used by recruiters, hiring teams and 100,000+ people."
         />
 
-        <div className="space-y-24 lg:space-y-32">
-          {projectData.map((project, index) => {
-            const reverse = index % 2 === 1;
-            return (
-              <article
+        <ul className="mx-auto max-w-5xl border-t border-zinc-200 dark:border-white/10">
+          <Fade direction="up" triggerOnce cascade damping={0.06}>
+            {projectData.map((project) => (
+              <li
                 key={project.id}
-                className="group grid items-center gap-12 lg:grid-cols-12 lg:gap-16"
+                className="group grid gap-6 border-b border-zinc-200 py-10 dark:border-white/10 md:grid-cols-[2fr_3fr] md:gap-10"
               >
-                <Fade
-                  direction={reverse ? "right" : "left"}
-                  triggerOnce
-                  className={`lg:col-span-7 ${reverse ? "lg:order-2" : ""}`}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.title}`}
+                  className="block self-start"
                 >
+                  <Thumbnail project={project} />
+                </a>
+
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h3 className="font-display text-2xl font-semibold text-zinc-900 transition-colors duration-300 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-300">
+                      {project.title}
+                    </h3>
+                    <span className="text-[11px] font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+                      {project.category}
+                    </span>
+                  </div>
+                  <p className="mt-1 font-medium text-zinc-700 dark:text-zinc-200">
+                    {project.tagline}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+                    {project.description}
+                  </p>
+
+                  <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                    {project.metrics.map((metric) => (
+                      <div key={metric.label} className="flex items-baseline gap-1.5">
+                        <dt className="sr-only">{metric.label}</dt>
+                        <dd className="font-semibold text-zinc-900 dark:text-white">
+                          {metric.value}
+                        </dd>
+                        <dd className="text-zinc-500 dark:text-zinc-400">{metric.label}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-flex items-center gap-1.5 rounded-md bg-zinc-200/60 py-0.5 pl-0.5 pr-2 text-xs font-medium text-zinc-600 dark:bg-white/[0.06] dark:text-zinc-300"
+                      >
+                        {techLogos[tag] && (
+                          <span className="flex h-5 w-5 items-center justify-center rounded bg-white p-0.5">
+                            <img src={techLogos[tag]} alt="" className="h-full w-full object-contain" />
+                          </span>
+                        )}
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Visit ${project.title}`}
-                    className="block"
+                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:underline dark:text-indigo-300"
                   >
-                    <BrowserFrame project={project} />
+                    {domainOf(project.link)} <FiArrowUpRight />
                   </a>
-                </Fade>
-
-                <Fade
-                  direction={reverse ? "left" : "right"}
-                  triggerOnce
-                  className={`lg:col-span-5 ${reverse ? "lg:order-1" : ""}`}
-                >
-                  <div>
-                    <div className="flex items-center gap-4">
-                      <span className="text-outline font-display text-5xl font-bold leading-none">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="badge">{project.category}</span>
-                    </div>
-
-                    <h3 className="mt-5 font-display text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
-                      {project.title}
-                    </h3>
-                    <p className="mt-1 font-medium text-indigo-600 dark:text-indigo-300">
-                      {project.tagline}
-                    </p>
-                    <p className="mt-4 leading-relaxed">{project.description}</p>
-
-                    <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-zinc-200 bg-zinc-200 dark:border-white/10 dark:bg-white/10">
-                      {project.metrics.map((metric) => (
-                        <div key={metric.label} className="bg-white p-4 dark:bg-zinc-950">
-                          <dt className="sr-only">{metric.label}</dt>
-                          <dd className="font-display text-2xl font-bold text-zinc-900 dark:text-white">
-                            {metric.value}
-                          </dd>
-                          <dd className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">
-                            {metric.label}
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
-
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white py-1 pl-1 pr-3 text-xs font-medium text-zinc-700 transition-colors hover:border-indigo-500/40 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300"
-                        >
-                          {techLogos[tag] && (
-                            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white p-1 ring-1 ring-zinc-200 dark:ring-white/10">
-                              <img
-                                src={techLogos[tag]}
-                                alt=""
-                                className="h-full w-full object-contain"
-                              />
-                            </span>
-                          )}
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary mt-8"
-                    >
-                      Visit {domainOf(project.link)} <FiArrowUpRight />
-                    </a>
-                  </div>
-                </Fade>
-              </article>
-            );
-          })}
-        </div>
+                </div>
+              </li>
+            ))}
+          </Fade>
+        </ul>
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ const CodeCard = () => (
           <span className="text-violet-300">developer</span> = {"{"}
           {"\n  "}name: <span className="text-orange-300">"Mohd Moazzam"</span>,
           {"\n  "}role: <span className="text-orange-300">"Full Stack Developer"</span>,
-          {"\n  "}company: <span className="text-orange-300">"AppSierra"</span>,
+          {"\n  "}company: <span className="text-orange-300">"Appsierra"</span>,
           {"\n  "}stack: [<span className="text-orange-300">"Node.js"</span>,{" "}
           <span className="text-orange-300">"NestJS"</span>,{" "}
           <span className="text-orange-300">"React"</span>,

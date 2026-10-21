@@ -8,9 +8,17 @@ const Timeline = ({ items }: { items: TimelineItem[] }) => {
     <ol className="relative mx-auto max-w-4xl space-y-8 before:absolute before:bottom-0 before:left-5 before:top-2 before:w-px before:bg-gradient-to-b before:from-indigo-500 before:via-zinc-300 before:to-transparent dark:before:via-white/10">
       {items.map((item) => (
         <li key={item.id} className="relative pl-14 sm:pl-16">
-          <span className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full border border-indigo-500/30 bg-white text-lg text-indigo-600 shadow-sm dark:bg-zinc-900 dark:text-indigo-300">
-            <item.icon />
-          </span>
+          {item.logo ? (
+            <img
+              src={item.logo}
+              alt={`${item.org} logo`}
+              className="absolute left-0 top-1 h-10 w-10 rounded-xl shadow-sm ring-1 ring-zinc-200 dark:ring-white/10"
+            />
+          ) : (
+            <span className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full border border-indigo-500/30 bg-white text-lg text-indigo-600 shadow-sm dark:bg-zinc-900 dark:text-indigo-300">
+              <item.icon />
+            </span>
+          )}
           <Fade direction="up" triggerOnce>
             <div className="card p-6 transition-colors duration-300 hover:border-indigo-500/40">
               <div className="flex flex-wrap items-center justify-between gap-2">

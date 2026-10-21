@@ -4,6 +4,11 @@ import { IconType } from "react-icons";
 import pitchnhireImage from "../assets/images/projects/pitchnhire.webp";
 import palifyImage from "../assets/images/projects/palify.webp";
 import studynotionImage from "../assets/images/projects/studynotion.webp";
+import appsierraLogo from "../assets/images/appsierra.png";
+import amrapaliLogo from "../assets/images/amrapali.png";
+import gpkashipurLogo from "../assets/images/gpkashipur.png";
+import codehelpLogo from "../assets/images/codehelp.png";
+import namastedevLogo from "../assets/images/namastedev.webp";
 import nodejsLogo from "../assets/tech/nodejs-original.svg";
 import nestjsLogo from "../assets/tech/nestjs-original.svg";
 import expressLogo from "../assets/tech/express-original.svg";
@@ -24,6 +29,8 @@ import gitLogo from "../assets/tech/git-original.svg";
 import openaiLogo from "../assets/tech/openai.svg";
 import grokLogo from "../assets/tech/grok.svg";
 import claudeLogo from "../assets/tech/claude.svg";
+import reduxLogo from "../assets/tech/redux.svg";
+import razorpayLogo from "../assets/tech/razorpay.svg";
 
 export const techLogos: Record<string, string> = {
   "Node.js": nodejsLogo,
@@ -34,10 +41,13 @@ export const techLogos: Record<string, string> = {
   Elasticsearch: elasticsearchLogo,
   Redis: redisLogo,
   WebSocket: socketioLogo,
+  "Socket.IO": socketioLogo,
   "OpenAI API": openaiLogo,
   "Grok API": grokLogo,
   "Express.js": expressLogo,
   MongoDB: mongodbLogo,
+  Redux: reduxLogo,
+  Razorpay: razorpayLogo,
 };
 
 export interface TimelineProject {
@@ -55,16 +65,18 @@ export interface TimelineItem {
   description?: string;
   projects?: TimelineProject[];
   icon: IconType;
+  logo?: string;
 }
 
 export const experienceData: TimelineItem[] = [
   {
     id: 1,
     title: "Associate Developer",
-    org: "AppSierra",
+    org: "Appsierra",
     period: "Nov 2022 - Present",
     location: "Noida, Uttar Pradesh, India",
     icon: MdOutlineWork,
+    logo: appsierraLogo,
   },
 ];
 
@@ -77,6 +89,8 @@ export interface EducationItem {
   start: number;
   end: number;
   icon: IconType;
+  logo?: string;
+  url?: string;
 }
 
 export const educationData: EducationItem[] = [
@@ -89,6 +103,8 @@ export const educationData: EducationItem[] = [
     start: 2015,
     end: 2018,
     icon: GiDiploma,
+    logo: gpkashipurLogo,
+    url: "https://gpkashipur.in",
   },
   {
     id: 2,
@@ -99,6 +115,8 @@ export const educationData: EducationItem[] = [
     start: 2019,
     end: 2022,
     icon: MdSchool,
+    logo: amrapaliLogo,
+    url: "https://amrapali.ac.in",
   },
 ];
 
@@ -107,6 +125,8 @@ export interface Certification {
   title: string;
   issuer: string;
   points: string[];
+  logo?: string;
+  url?: string;
 }
 
 export const certificationData: Certification[] = [
@@ -114,6 +134,8 @@ export const certificationData: Certification[] = [
     id: 1,
     title: "Web Development Bootcamp",
     issuer: "Code Help",
+    logo: codehelpLogo,
+    url: "https://www.codehelp.in",
     points: [
       "Built and deployed full-stack MERN applications with authentication, RESTful APIs and responsive UIs.",
       "Used Git-based version control and collaborative workflows across team projects.",
@@ -123,6 +145,8 @@ export const certificationData: Certification[] = [
     id: 2,
     title: "JavaScript",
     issuer: "NamasteDev",
+    logo: namastedevLogo,
+    url: "https://namastedev.com",
     points: [
       "Mastered core JavaScript internals, including closures, scope, hoisting and asynchronous programming.",
       "Applied them to writing clean, efficient JavaScript for both browser and Node.js environments.",
