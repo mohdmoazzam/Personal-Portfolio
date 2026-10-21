@@ -7,16 +7,17 @@ import {
   LINKEDIN_PROFILE_URI,
   NAV_LINKS,
 } from "../utils/contants";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
     <footer className="border-t border-zinc-200 dark:border-white/10">
       <div className="container-page flex flex-col items-center gap-6 py-10 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
-          <p className="font-display text-lg font-bold text-zinc-900 dark:text-white">
-            MDM<span className="text-orange-400">.</span>
-          </p>
-          <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+          <div className="flex justify-center md:justify-start">
+            <Logo className="h-8 w-8" />
+          </div>
+          <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
             Made with ❤️ by Mohd Moazzam &copy; {new Date().getFullYear()}
           </p>
         </div>

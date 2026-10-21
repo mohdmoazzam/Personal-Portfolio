@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import { FiGithub, FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import { useTheme } from "../context/ThemeContext";
 import { GITHUB_PROFILE_URI, NAV_LINKS } from "../utils/contants";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -29,9 +30,10 @@ const Navbar = () => {
           to="home"
           smooth
           duration={500}
-          className="cursor-pointer font-display text-xl font-bold tracking-tight text-zinc-900 dark:text-white"
+          className="group cursor-pointer"
+          aria-label="Mohd Moazzam — back to top"
         >
-          MDM<span className="text-orange-400">.</span>
+          <Logo className="h-9 w-9 transition-transform duration-300 group-hover:-rotate-6" />
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
