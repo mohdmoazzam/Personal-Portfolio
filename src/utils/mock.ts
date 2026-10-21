@@ -64,18 +64,6 @@ export const experienceData: TimelineItem[] = [
     period: "Nov 2022 - Present",
     location: "Noida, Uttar Pradesh, India",
     icon: MdOutlineWork,
-    projects: [
-      {
-        name: "PitchNHire — Applicant Tracking System",
-        url: "https://app.pitchnhire.com",
-        stack: "NestJS · Node.js · TypeScript · PostgreSQL · Elasticsearch · Redis",
-      },
-      {
-        name: "Palify — Gamified Professional Networking Platform",
-        url: "https://palify.io",
-        stack: "Node.js · React.js · WebSocket · Full-stack",
-      },
-    ],
   },
 ];
 
