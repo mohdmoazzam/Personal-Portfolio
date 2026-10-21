@@ -246,4 +246,18 @@ export const projectData: Project[] = [
     link: "https://studynotion-hub.vercel.app",
     image: studynotionImage,
   },
+  {
+    id: 5,
+    title: "BuzzChat",
+    tagline: "Real-time Chat App",
+    description:
+      "One-on-one and group chats with friend requests, file attachments, online presence and live notifications, plus an admin dashboard for users, chats and messages.",
+    category: "Full stack",
+    metrics: [
+      { value: "Real-time", label: "Messaging & presence" },
+      { value: "Admin", label: "Analytics & moderation dashboard" },
+    ],
+    tags: ["NestJS", "React.js", "Socket.IO", "PostgreSQL", "Redis"],
+    link: "https://buzzchat-web.vercel.app",
+  },
 ];
