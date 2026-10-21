@@ -243,7 +243,7 @@ export const projectData: Project[] = [
       { value: "Razorpay", label: "Course checkout & payments" },
     ],
     tags: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB", "Razorpay"],
-    link: "https://study-notion-mdmo.vercel.app",
+    link: "https://studynotion-hub.vercel.app",
     image: studynotionImage,
   },
 ];
